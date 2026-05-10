@@ -1,0 +1,317 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #111;
+  color: white;
+}
+
+.max-width {
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 999;
+  background: #111;
+}
+
+.navbar .max-width {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo a {
+  color: white;
+  font-size: 35px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navbar .menu {
+  display: flex;
+  list-style: none;
+}
+
+.navbar .menu li {
+  margin-left: 25px;
+}
+
+.navbar .menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.navbar .menu li a:hover {
+  color: crimson;
+}
+
+/* Home */
+.home {
+  display: flex;
+  height: 100vh;
+  background: #000;
+  min-height: 500px;
+  color: white;
+  align-items: center;
+}
+
+.home .home-content .text-1 {
+  font-size: 27px;
+}
+
+.home .home-content .text-2 {
+  font-size: 75px;
+  font-weight: 600;
+}
+
+.home .home-content .text-3 {
+  font-size: 40px;
+  margin: 5px 0;
+}
+
+.home .home-content .text-3 span {
+  color: crimson;
+  font-weight: 500;
+}
+
+.home .home-content a {
+  display: inline-block;
+  background: crimson;
+  color: white;
+  font-size: 25px;
+  padding: 12px 36px;
+  margin-top: 20px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* Sections */
+section {
+  padding: 100px 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+/* About */
+.about-content,
+.skills-content,
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about .left img {
+  width: 350px;
+  border-radius: 10px;
+}
+
+.about .right {
+  width: 55%;
+}
+
+.about .right .text {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.about .right .text span {
+  color: crimson;
+}
+
+.about .right a {
+  display: inline-block;
+  background: crimson;
+  color: white;
+  padding: 10px 30px;
+  margin-top: 20px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* Skills */
+.skills .bars {
+  margin-bottom: 20px;
+}
+
+.skills .info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skills .line {
+  height: 5px;
+  width: 100%;
+  background: lightgray;
+  position: relative;
+}
+
+.skills .line::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: crimson;
+}
+
+.skills .java::before {
+  width: 90%;
+}
+
+.skills .html::before {
+  width: 85%;
+}
+
+.skills .css::before {
+  width: 80%;
+}
+
+.skills .javascript::before {
+  width: 75%;
+}
+
+.skills .react::before {
+  width: 75%;
+}
+
+/* Education */
+.education-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.edu-card {
+  background: #222;
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.edu-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Projects */
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  width: 320px;
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card .box {
+  padding: 20px;
+}
+
+.card .text {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: crimson;
+}
+
+/* Contact */
+.contact .column {
+  width: 48%;
+}
+
+.contact form input,
+.contact form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.contact form button {
+  background: crimson;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 947px) {
+  .max-width {
+    padding: 0 30px;
+  }
+
+  .navbar .menu {
+    display: none;
+  }
+
+  .about-content,
+  .skills-content,
+  .contact-content {
+    flex-direction: column;
+  }
+
+  .about .right,
+  .contact .column {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .home .home-content .text-2 {
+    font-size: 60px;
+  }
+
+  .home .home-content .text-3 {
+    font-size: 32px;
+  }
+}
