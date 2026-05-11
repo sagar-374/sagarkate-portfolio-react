@@ -20,6 +20,7 @@ export default function LoadingScreen() {
       className="fixed inset-0 z-[999] bg-[#020617] overflow-hidden flex items-center justify-center"
     >
       {/* ================= Background ================= */}
+
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.12),transparent_65%)]" />
 
       {/* Animated Grid */}
@@ -46,6 +47,7 @@ export default function LoadingScreen() {
       />
 
       {/* ================= Main Loader ================= */}
+
       <div className="relative flex flex-col items-center">
 
         {/* Outer Rotating Ring */}
@@ -145,6 +147,7 @@ export default function LoadingScreen() {
         </motion.div>
 
         {/* ================= Text ================= */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{
@@ -194,22 +197,109 @@ export default function LoadingScreen() {
             </span>
           </div>
 
-          {/* Futuristic Loading Bar */}
-          <div className="relative mt-10 w-[320px] h-[5px] rounded-full overflow-hidden bg-white/5 border border-cyan-400/10">
-            {/* Moving Glow */}
-            <motion.div
-              initial={{ x: '-100%' }}
-              animate={{ x: '220%' }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-              className="absolute top-0 left-0 w-28 h-full bg-gradient-to-r from-transparent via-cyan-400 to-transparent blur-[2px]"
-            />
+          {/* ================= AI SEARCH BAR ================= */}
 
-            {/* Static Base */}
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-cyan-300/20 to-blue-500/10" />
+          <div className="mt-10 flex justify-center">
+            <div
+              className="
+                relative
+                w-[320px]
+                md:w-[380px]
+                h-14
+                rounded-2xl
+                overflow-hidden
+                border
+                border-cyan-400/20
+                bg-white/[0.04]
+                backdrop-blur-2xl
+                shadow-[0_0_40px_rgba(34,211,238,0.08)]
+              "
+            >
+              {/* Background Glow */}
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-blue-500/5 to-purple-500/5" />
+
+              {/* Scanning Line */}
+              <motion.div
+                initial={{ x: '-100%' }}
+                animate={{ x: '220%' }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: 'linear',
+                }}
+                className="
+                  absolute
+                  top-0
+                  left-0
+                  w-24
+                  h-full
+                  bg-gradient-to-r
+                  from-transparent
+                  via-cyan-400/60
+                  to-transparent
+                  blur-md
+                "
+              />
+
+              {/* Content */}
+              <div className="relative z-10 h-full flex items-center justify-between px-5">
+
+                {/* Left Side */}
+                <div className="flex items-center gap-3">
+                  {/* Animated Dot */}
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.4, 1],
+                      opacity: [0.5, 1, 0.5],
+                    }}
+                    transition={{
+                      duration: 1.2,
+                      repeat: Infinity,
+                    }}
+                    className="w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.9)]"
+                  />
+
+                  {/* Text */}
+                  <motion.span
+                    animate={{
+                      opacity: [0.6, 1, 0.6],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                    }}
+                    className="
+                      text-sm
+                      md:text-base
+                      tracking-[0.25em]
+                      uppercase
+                      text-cyan-300
+                    "
+                  >
+                    Searching Network...
+                  </motion.span>
+                </div>
+
+                {/* Percentage */}
+                <motion.span
+                  animate={{
+                    opacity: [0.5, 1, 0.5],
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                  }}
+                  className="
+                    text-xs
+                    md:text-sm
+                    tracking-[0.2em]
+                    text-cyan-400
+                  "
+                >
+                  100%
+                </motion.span>
+              </div>
+            </div>
           </div>
 
           {/* Percentage */}

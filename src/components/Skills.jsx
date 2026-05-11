@@ -9,6 +9,23 @@ import {
   Rocket,
 } from 'lucide-react'
 
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaJava,
+  FaGitAlt,
+  FaGithub,
+} from 'react-icons/fa'
+
+import {
+  SiTailwindcss,
+  SiSpringboot,
+  SiHibernate,
+  SiMysql,
+} from 'react-icons/si'
+
 const skills = [
   { name: 'C++', level: '80%' },
   { name: 'Java', level: '90%' },
@@ -29,35 +46,82 @@ const categories = [
     icon: Code2,
     color: 'cyan',
     skills: [
-      'HTML',
-      'CSS',
-      'JavaScript',
-      'React',
-      'Tailwind CSS',
+      {
+        name: 'HTML',
+        icon: <FaHtml5 />,
+      },
+      {
+        name: 'CSS',
+        icon: <FaCss3Alt />,
+      },
+      {
+        name: 'JavaScript',
+        icon: <FaJs />,
+      },
+      {
+        name: 'React',
+        icon: <FaReact />,
+      },
+      {
+        name: 'Tailwind CSS',
+        icon: <SiTailwindcss />,
+      },
     ],
   },
+
   {
     title: 'Backend',
     icon: Server,
     color: 'purple',
     skills: [
-      'Java',
-      'Spring MVC',
-      'Spring Boot',
-      'Hibernate ORM',
-      'REST API',
+      {
+        name: 'Java',
+        icon: <FaJava />,
+      },
+      {
+        name: 'Spring MVC',
+        icon: <SiSpringboot />,
+      },
+      {
+        name: 'Spring Boot',
+        icon: <SiSpringboot />,
+      },
+      {
+        name: 'Hibernate ORM',
+        icon: <SiHibernate />,
+      },
+      {
+        name: 'REST API',
+        icon: <Rocket size={16} />,
+      },
     ],
   },
+
   {
     title: 'Database & Tools',
     icon: Database,
     color: 'pink',
     skills: [
-      'SQL',
-      'MySQL',
-      'Git',
-      'GitHub',
-      'C++',
+      {
+        name: 'SQL',
+        icon: <Database size={16} />,
+      },
+      {
+        name: 'MySQL',
+        icon: <SiMysql />,
+      },
+      {
+        name: 'Git',
+        icon: <FaGitAlt />,
+      },
+      {
+        name: 'GitHub',
+        icon: <FaGithub />,
+      },
+      {
+        name: 'C++',
+        icon: <Code2 size={16} />,
+      },
     ],
   },
 ]
@@ -213,6 +277,7 @@ export default function Skills() {
                       key={i}
                       whileHover={{ scale: 1.08 }}
                       className={`
+                        flex items-center gap-2
                         px-4 py-2 rounded-xl border text-sm font-medium
                         ${
                           category.color === 'cyan'
@@ -223,7 +288,11 @@ export default function Skills() {
                         }
                       `}
                     >
-                      {item}
+                      <span className="text-lg">
+                        {item.icon}
+                      </span>
+
+                      {item.name}
                     </motion.span>
                   ))}
                 </div>
